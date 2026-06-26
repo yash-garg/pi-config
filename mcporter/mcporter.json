@@ -24,6 +24,12 @@
       "type": "http",
       "url": "https://observability.mcp.cloudflare.com/mcp"
     },
+    "dart": {
+      "command": [
+        "dart",
+        "mcp-server"
+      ]
+    },
     "figma": {
       "type": "http",
       "url": "https://mcp.figma.com/mcp"
