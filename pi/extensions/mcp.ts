@@ -41,6 +41,24 @@ export default function (pi: ExtensionAPI) {
     enableTools(pi, ["mcp"]);
   });
 
+  pi.registerCommand("mcps", {
+    description: "List configured MCP servers",
+    handler: async (_args, ctx) => {
+      const result = await pi.exec("mcporter", ["list"], { timeout: 15_000 });
+      const output = [result.stdout, result.stderr].filter(Boolean).join("\n").trim();
+      if (!output) {
+        ctx.ui.notify(
+          result.code !== 0
+            ? `mcporter exited with code ${result.code} and no output`
+            : "No MCP servers configured",
+          result.code !== 0 ? "error" : "info",
+        );
+        return;
+      }
+      ctx.ui.notify(output, result.code !== 0 ? "error" : "info");
+    },
+  });
+
   pi.registerTool({
     name: "mcp",
     label: "MCP",
