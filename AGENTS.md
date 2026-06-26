@@ -27,7 +27,8 @@ pi-config/
 │   ├── settings.json        # Pi settings
 │   └── sandbox.json         # Pi sandbox config
 ├── mcporter/                # mcporter MCP config (mcporter.json, symlinked to ~/.mcporter)
-└── flake.nix                # Nix flake — installs packages and wires symlinks via home-manager
+├── scripts/                 # Utility scripts (sync.sh)
+└── flake.nix                # Nix flake — installs packages, wires symlinks, runs npm deps via home-manager
 ```
 
 ## WHERE TO LOOK
