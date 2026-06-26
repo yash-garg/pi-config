@@ -1,8 +1,7 @@
 ## Pi asset placement
 
-In this repo, `pi/` is the canonical source of truth for user-global Pi assets.
-`~/.pi` is symlinked to this repository's `pi/` directory via the nix flake.
-When adding or editing Pi agents, extensions, prompts, skills, themes, or related global Pi configuration, put them in `pi/` directly.
+Assets live at the repo root and are symlinked into `~/.pi/agent/` by `scripts/install.sh`.
+When adding or editing Pi agents, extensions, prompts, skills, themes, or related global Pi configuration, put them at the repo root directly (e.g. `agents/`, `extensions/`, `skills/`).
 
 ## Pi extension tests
 
@@ -18,30 +17,30 @@ When a Pi extension registers its own tool, that extension should also enable th
 
 ```
 pi-config/
-├── pi/                      # Canonical user-global Pi config (symlinked to ~/.pi)
-│   ├── agents/              # Custom agent definitions
-│   ├── extensions/          # Pi extensions — TypeScript, loaded at Pi runtime
-│   ├── skills/              # Agent skills (dart, flutter, cloudflare)
-│   ├── themes/              # UI themes
-│   ├── prompts/             # Prompt templates
-│   ├── settings.json        # Pi settings
-│   └── sandbox.json         # Pi sandbox config
+├── agents/                  # Custom agent definitions (symlinked → ~/.pi/agent/agents)
+├── extensions/              # Pi extensions — TypeScript, loaded at Pi runtime (symlinked → ~/.pi/agent/extensions)
+├── skills/                  # Agent skills (dart, flutter, cloudflare, …) (symlinked → ~/.pi/agent/skills)
+├── themes/                  # UI themes (symlinked → ~/.pi/agent/themes)
+├── prompts/                 # Prompt templates (symlinked → ~/.pi/agent/prompts)
+├── settings.json            # Pi settings (symlinked → ~/.pi/agent/settings.json)
+├── sandbox.json             # Pi sandbox config (symlinked → ~/.pi/agent/sandbox.json)
 ├── mcporter/                # mcporter MCP config (mcporter.json, symlinked to ~/.mcporter)
-├── scripts/                 # Utility scripts (sync.sh)
-└── flake.nix                # Nix flake — installs packages, wires symlinks, runs npm deps via home-manager
+├── git/                     # Git config/ignore overrides
+└── scripts/                 # Utility scripts (install.sh, sync.sh)
 ```
 
 ## WHERE TO LOOK
 
 | Task | Location |
 |------|----------|
-| Add/edit extension | `pi/extensions/` |
-| Add/edit agent | `pi/agents/` |
-| Add/edit theme | `pi/themes/` |
-| Add/edit prompt | `pi/prompts/` |
-| Add/edit agent skill | `pi/skills/` |
+| Add/edit extension | `extensions/` |
+| Add/edit agent | `agents/` |
+| Add/edit theme | `themes/` |
+| Add/edit prompt | `prompts/` |
+| Add/edit agent skill | `skills/` |
 | Add/edit MCP server | `mcporter/mcporter.json` |
-| Pi settings | `pi/settings.json` |
+| Pi settings | `settings.json` |
+| Wire symlinks / install deps | `scripts/install.sh` |
 
 ## ANTI-PATTERNS
 

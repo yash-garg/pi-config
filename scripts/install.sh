@@ -16,7 +16,7 @@ function link() {
 function link_pi() {
   local name
   name="${1:?}"
-  link "$REPO/pi/${name}" "$HOME/.pi/agent/${name}"
+  link "$REPO/${name}" "$HOME/.pi/agent/${name}"
 }
 
 mkdir -p "$HOME/.pi/agent"
