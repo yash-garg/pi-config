@@ -101,6 +101,20 @@
     {
       "extensions": [],
       "source": "git:github.com/obra/superpowers"
+    },
+    {
+      "source": "npm:tau-coding-agent",
+      "extensions": [
+        "extensions/**",
+        "!extensions/answer.ts",
+        "!extensions/branch-term.ts",
+        "!extensions/openai-fast.ts",
+        "!extensions/openai-verbosity.ts",
+        "!extensions/loop.ts",
+        "!extensions/review.ts",
+        "!extensions/telegram.ts",
+        "!extensions/todoist.ts"
+      ]
     }
   ],
   "steeringMode": "all",
