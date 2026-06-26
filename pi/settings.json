@@ -1,0 +1,30 @@
+{
+  "branchSummary": {
+    "skipPrompt": true
+  },
+  "defaultModel": "claude-sonnet-4-6",
+  "defaultProvider": "anthropic",
+  "defaultThinkingLevel": "medium",
+  "doubleEscapeAction": "tree",
+  "editorPaddingX": 0,
+  "enableInstallTelemetry": false,
+  "enableSkillCommands": true,
+  "hideThinkingBlock": false,
+  "lastChangelogVersion": "0.80.2",
+  "packages": [
+    {
+      "source": "git:github.com/obra/superpowers",
+      "extensions": []
+    }
+  ],
+  "steeringMode": "all",
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "theme": "catppuccin-mocha",
+  "transport": "auto",
+  "treeFilterMode": "default",
+  "warnings": {
+    "anthropicExtraUsage": false
+  }
+}
