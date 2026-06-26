@@ -30,10 +30,6 @@
         "mcp-server"
       ]
     },
-    "figma": {
-      "type": "http",
-      "url": "https://mcp.figma.com/mcp"
-    },
     "github-mcp-server": {
       "command": [
         "github-mcp-server",

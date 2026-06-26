@@ -1,4 +1,90 @@
 {
+  "bashPermissions": {
+    "banned": [
+      {
+        "pattern": "cat",
+        "reason": "Prefer the read tool over cat — it supports pagination via offset and limit parameters."
+      },
+      {
+        "pattern": [
+          "sed",
+          "-n"
+        ],
+        "reason": "Prefer the read tool over sed -n for reading parts of a file — use the offset and limit parameters to target specific line ranges."
+      },
+      {
+        "pattern": [
+          "sed",
+          "-i"
+        ],
+        "reason": "Prefer the edit tool over sed -i for in-place text replacements — use edits[].oldText and edits[].newText to make precise changes."
+      },
+      {
+        "pattern": "find",
+        "reason": "Prefer the find tool over the find command — it respects .gitignore and returns results faster."
+      },
+      [
+        "git",
+        "push"
+      ],
+      {
+        "pattern": [
+          "grep",
+          ".gradle"
+        ],
+        "reason": "Do not grep inside ~/.gradle. Load the fetching-maven-sources skill and fetch a sources JAR from Maven Central or Google Maven instead."
+      },
+      {
+        "pattern": [
+          "grep",
+          ".m2"
+        ],
+        "reason": "Do not grep inside ~/.m2. Load the fetching-maven-sources skill and fetch a sources JAR from Maven Central or Google Maven instead."
+      },
+      {
+        "pattern": [
+          "ls",
+          ".gradle"
+        ],
+        "reason": "Do not list ~/.gradle cache directories. Load the fetching-maven-sources skill and fetch a sources JAR from Maven Central or Google Maven instead."
+      },
+      {
+        "pattern": [
+          "ls",
+          ".m2"
+        ],
+        "reason": "Do not list ~/.m2 cache directories. Load the fetching-maven-sources skill and fetch a sources JAR from Maven Central or Google Maven instead."
+      },
+      {
+        "pattern": [
+          "jar",
+          ".gradle"
+        ],
+        "reason": "Do not inspect JARs from ~/.gradle. Load the fetching-maven-sources skill and fetch a sources JAR from Maven Central or Google Maven instead."
+      },
+      {
+        "pattern": [
+          "jar",
+          ".m2"
+        ],
+        "reason": "Do not inspect JARs from ~/.m2. Load the fetching-maven-sources skill and fetch a sources JAR from Maven Central or Google Maven instead."
+      },
+      {
+        "pattern": [
+          "javap",
+          ".gradle"
+        ],
+        "reason": "Do not decompile classes from ~/.gradle. Load the fetching-maven-sources skill and fetch a sources JAR from Maven Central or Google Maven instead."
+      },
+      {
+        "pattern": [
+          "javap",
+          ".m2"
+        ],
+        "reason": "Do not decompile classes from ~/.m2. Load the fetching-maven-sources skill and fetch a sources JAR from Maven Central or Google Maven instead."
+      }
+    ]
+  },
   "branchSummary": {
     "skipPrompt": true
   },
@@ -13,8 +99,8 @@
   "lastChangelogVersion": "0.80.2",
   "packages": [
     {
-      "source": "git:github.com/obra/superpowers",
-      "extensions": []
+      "extensions": [],
+      "source": "git:github.com/obra/superpowers"
     }
   ],
   "steeringMode": "all",
