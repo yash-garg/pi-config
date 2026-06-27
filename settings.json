@@ -115,7 +115,8 @@
         "!extensions/telegram.ts",
         "!extensions/todoist.ts"
       ]
-    }
+    },
+    "npm:@gotgenes/pi-anthropic-auth"
   ],
   "steeringMode": "all",
   "terminal": {
@@ -125,6 +126,6 @@
   "transport": "auto",
   "treeFilterMode": "default",
   "warnings": {
-    "anthropicExtraUsage": false
+    "anthropicExtraUsage": true
   }
 }
