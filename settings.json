@@ -118,14 +118,15 @@
     },
     "npm:@gotgenes/pi-anthropic-auth"
   ],
+  "quietStartup": true,
   "steeringMode": "all",
   "terminal": {
     "showTerminalProgress": true
   },
-  "theme": "catppuccin-mocha",
+  "theme": "catppuccin-latte/catppuccin-mocha"
   "transport": "auto",
   "treeFilterMode": "default",
   "warnings": {
-    "anthropicExtraUsage": true
+    "anthropicExtraUsage": false
   }
 }
